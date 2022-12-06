@@ -28,6 +28,7 @@ export const CustomerShow = (props: ShowProps): React.ReactElement => {
         <TextField label="ID" source="id" />
         <TextField label="Last Name" source="lastName" />
         <TextField label="Phone" source="phone" />
+        <TextField label="test" source="test" />
         <DateField source="updatedAt" label="Updated At" />
         <ReferenceManyField
           reference="Order"
