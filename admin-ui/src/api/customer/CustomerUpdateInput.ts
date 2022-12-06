@@ -8,4 +8,5 @@ export type CustomerUpdateInput = {
   lastName?: string | null;
   orders?: OrderUpdateManyWithoutCustomersInput;
   phone?: string | null;
+  test?: string | null;
 };
