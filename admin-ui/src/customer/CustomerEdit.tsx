@@ -13,6 +13,7 @@ import {
 
 import { AddressTitle } from "../address/AddressTitle";
 import { OrderTitle } from "../order/OrderTitle";
+import { ScoreTitle } from "../score/ScoreTitle";
 
 export const CustomerEdit = (props: EditProps): React.ReactElement => {
   return (
@@ -33,6 +34,10 @@ export const CustomerEdit = (props: EditProps): React.ReactElement => {
           <SelectArrayInput optionText={OrderTitle} />
         </ReferenceArrayInput>
         <TextInput label="Phone" source="phone" />
+        <ReferenceInput source="score.id" reference="Score" label="Score">
+          <SelectInput optionText={ScoreTitle} />
+        </ReferenceInput>
+        <TextInput label="test" source="test" />
       </SimpleForm>
     </Edit>
   );
