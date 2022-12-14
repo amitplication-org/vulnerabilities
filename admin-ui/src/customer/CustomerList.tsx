@@ -9,6 +9,7 @@ import {
 } from "react-admin";
 import Pagination from "../Components/Pagination";
 import { ADDRESS_TITLE_FIELD } from "../address/AddressTitle";
+import { SCORE_TITLE_FIELD } from "../score/ScoreTitle";
 
 export const CustomerList = (props: ListProps): React.ReactElement => {
   return (
@@ -29,6 +30,10 @@ export const CustomerList = (props: ListProps): React.ReactElement => {
         <TextField label="ID" source="id" />
         <TextField label="Last Name" source="lastName" />
         <TextField label="Phone" source="phone" />
+        <ReferenceField label="Score" source="score.id" reference="Score">
+          <TextField source={SCORE_TITLE_FIELD} />
+        </ReferenceField>
+        <TextField label="test" source="test" />
         <DateField source="updatedAt" label="Updated At" />
       </Datagrid>
     </List>
