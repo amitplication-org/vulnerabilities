@@ -1,6 +1,6 @@
 import { AddressWhereUniqueInput } from "../address/AddressWhereUniqueInput";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
-import { IntFilter } from "../../util/IntFilter";
+import { StringFilter } from "../../util/StringFilter";
 import { OrderListRelationFilter } from "../order/OrderListRelationFilter";
 import { ScoreWhereUniqueInput } from "../score/ScoreWhereUniqueInput";
 
@@ -9,7 +9,7 @@ export type CustomerWhereInput = {
   cnumber?: StringNullableFilter;
   email?: StringNullableFilter;
   firstName?: StringNullableFilter;
-  id?: IntFilter;
+  id?: StringFilter;
   lastName?: StringNullableFilter;
   orders?: OrderListRelationFilter;
   phone?: StringNullableFilter;
