@@ -67,10 +67,12 @@ type Customer {
   createdAt: DateTime!
   email: String
   firstName: String
-  id: String!
+  id: Float!
   lastName: String
   orders(orderBy: [OrderOrderByInput!], skip: Float, take: Float, where: OrderWhereInput): [Order!]!
   phone: String
+  score: Score
+  test: String
   updatedAt: DateTime!
 }
 
@@ -81,9 +83,15 @@ input CustomerCreateInput {
   lastName: String
   orders: OrderCreateNestedManyWithoutCustomersInput
   phone: String
+  score: ScoreWhereUniqueInput
+  test: String
 }
 
 input CustomerCreateNestedManyWithoutAddressesInput {
+  connect: [CustomerWhereUniqueInput!]
+}
+
+input CustomerCreateNestedManyWithoutScoresInput {
   connect: [CustomerWhereUniqueInput!]
 }
 
@@ -101,6 +109,8 @@ input CustomerOrderByInput {
   id: SortOrder
   lastName: SortOrder
   phone: SortOrder
+  scoreId: SortOrder
+  test: SortOrder
   updatedAt: SortOrder
 }
 
@@ -111,9 +121,17 @@ input CustomerUpdateInput {
   lastName: String
   orders: OrderUpdateManyWithoutCustomersInput
   phone: String
+  score: ScoreWhereUniqueInput
+  test: String
 }
 
 input CustomerUpdateManyWithoutAddressesInput {
+  connect: [CustomerWhereUniqueInput!]
+  disconnect: [CustomerWhereUniqueInput!]
+  set: [CustomerWhereUniqueInput!]
+}
+
+input CustomerUpdateManyWithoutScoresInput {
   connect: [CustomerWhereUniqueInput!]
   disconnect: [CustomerWhereUniqueInput!]
   set: [CustomerWhereUniqueInput!]
@@ -123,14 +141,16 @@ input CustomerWhereInput {
   address: AddressWhereUniqueInput
   email: StringNullableFilter
   firstName: StringNullableFilter
-  id: StringFilter
+  id: IntFilter
   lastName: StringNullableFilter
   orders: OrderListRelationFilter
   phone: StringNullableFilter
+  score: ScoreWhereUniqueInput
+  test: StringNullableFilter
 }
 
 input CustomerWhereUniqueInput {
-  id: String!
+  id: Float!
 }
 
 """
@@ -147,6 +167,17 @@ input FloatNullableFilter {
   lte: Float
   not: Float
   notIn: [Float!]
+}
+
+input IntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: Int
+  notIn: [Int!]
 }
 
 input IntNullableFilter {
@@ -174,17 +205,20 @@ type Mutation {
   createCustomer(data: CustomerCreateInput!): Customer!
   createOrder(data: OrderCreateInput!): Order!
   createProduct(data: ProductCreateInput!): Product!
+  createScore(data: ScoreCreateInput!): Score!
   createUser(data: UserCreateInput!): User!
   deleteAddress(where: AddressWhereUniqueInput!): Address!
   deleteCustomer(where: CustomerWhereUniqueInput!): Customer!
   deleteOrder(where: OrderWhereUniqueInput!): Order!
   deleteProduct(where: ProductWhereUniqueInput!): Product!
+  deleteScore(where: ScoreWhereUniqueInput!): Score!
   deleteUser(where: UserWhereUniqueInput!): User!
   login(credentials: Credentials!): UserInfo!
   updateAddress(data: AddressUpdateInput!, where: AddressWhereUniqueInput!): Address!
   updateCustomer(data: CustomerUpdateInput!, where: CustomerWhereUniqueInput!): Customer!
   updateOrder(data: OrderUpdateInput!, where: OrderWhereUniqueInput!): Order!
   updateProduct(data: ProductUpdateInput!, where: ProductWhereUniqueInput!): Product!
+  updateScore(data: ScoreUpdateInput!, where: ScoreWhereUniqueInput!): Score!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User!
 }
 
@@ -315,6 +349,7 @@ type Query {
   _customersMeta(orderBy: [CustomerOrderByInput!], skip: Float, take: Float, where: CustomerWhereInput): MetaQueryPayload!
   _ordersMeta(orderBy: [OrderOrderByInput!], skip: Float, take: Float, where: OrderWhereInput): MetaQueryPayload!
   _productsMeta(orderBy: [ProductOrderByInput!], skip: Float, take: Float, where: ProductWhereInput): MetaQueryPayload!
+  _scoresMeta(orderBy: [ScoreOrderByInput!], skip: Float, take: Float, where: ScoreWhereInput): MetaQueryPayload!
   _usersMeta(orderBy: [UserOrderByInput!], skip: Float, take: Float, where: UserWhereInput): MetaQueryPayload!
   address(where: AddressWhereUniqueInput!): Address
   addresses(orderBy: [AddressOrderByInput!], skip: Float, take: Float, where: AddressWhereInput): [Address!]!
@@ -324,6 +359,8 @@ type Query {
   orders(orderBy: [OrderOrderByInput!], skip: Float, take: Float, where: OrderWhereInput): [Order!]!
   product(where: ProductWhereUniqueInput!): Product
   products(orderBy: [ProductOrderByInput!], skip: Float, take: Float, where: ProductWhereInput): [Product!]!
+  score(where: ScoreWhereUniqueInput!): Score
+  scores(orderBy: [ScoreOrderByInput!], skip: Float, take: Float, where: ScoreWhereInput): [Score!]!
   user(where: UserWhereUniqueInput!): User
   userInfo: UserInfo!
   users(orderBy: [UserOrderByInput!], skip: Float, take: Float, where: UserWhereInput): [User!]!
@@ -332,6 +369,41 @@ type Query {
 enum QueryMode {
   Default
   Insensitive
+}
+
+type Score {
+  createdAt: DateTime!
+  customers(orderBy: [CustomerOrderByInput!], skip: Float, take: Float, where: CustomerWhereInput): [Customer!]!
+  id: String!
+  updatedAt: DateTime!
+  value: Float
+}
+
+input ScoreCreateInput {
+  customers: CustomerCreateNestedManyWithoutScoresInput
+  value: Float
+}
+
+input ScoreOrderByInput {
+  createdAt: SortOrder
+  id: SortOrder
+  updatedAt: SortOrder
+  value: SortOrder
+}
+
+input ScoreUpdateInput {
+  customers: CustomerUpdateManyWithoutScoresInput
+  value: Float
+}
+
+input ScoreWhereInput {
+  customers: CustomerListRelationFilter
+  id: StringFilter
+  value: FloatNullableFilter
+}
+
+input ScoreWhereUniqueInput {
+  id: String!
 }
 
 enum SortOrder {

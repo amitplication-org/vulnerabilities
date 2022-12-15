@@ -2,6 +2,6 @@ import { Customer as TCustomer } from "../api/customer/Customer";
 
 export const CUSTOMER_TITLE_FIELD = "firstName";
 
-export const CustomerTitle = (record: TCustomer): string => {
-  return record.firstName || record.id;
+export const CustomerTitle = (record: TCustomer): any => {
+  return record.firstName;
 };
