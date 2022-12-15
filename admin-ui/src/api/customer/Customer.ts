@@ -4,6 +4,7 @@ import { Score } from "../score/Score";
 
 export type Customer = {
   address?: Address | null;
+  cnumber: string | null;
   createdAt: Date;
   email: string | null;
   firstName: string | null;

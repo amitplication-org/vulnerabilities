@@ -23,6 +23,7 @@ export const CustomerShow = (props: ShowProps): React.ReactElement => {
         <ReferenceField label="Address" source="address.id" reference="Address">
           <TextField source={ADDRESS_TITLE_FIELD} />
         </ReferenceField>
+        <TextField label="cnumber" source="cnumber" />
         <DateField source="createdAt" label="Created At" />
         <TextField label="Email" source="email" />
         <TextField label="First Name" source="firstName" />
@@ -50,6 +51,7 @@ export const CustomerShow = (props: ShowProps): React.ReactElement => {
             </ReferenceField>
             <TextField label="Discount" source="discount" />
             <TextField label="ID" source="id" />
+            <TextField label="onumber" source="onumber" />
             <ReferenceField
               label="Product"
               source="product.id"
