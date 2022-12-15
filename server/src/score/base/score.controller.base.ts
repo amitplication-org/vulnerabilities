@@ -201,6 +201,7 @@ export class ScoreControllerBase {
           },
         },
 
+        cnumber: true,
         createdAt: true,
         email: true,
         firstName: true,

@@ -72,6 +72,7 @@ export class OrderControllerBase {
 
         discount: true,
         id: true,
+        onumber: true,
 
         product: {
           select: {
@@ -111,6 +112,7 @@ export class OrderControllerBase {
 
         discount: true,
         id: true,
+        onumber: true,
 
         product: {
           select: {
@@ -151,6 +153,7 @@ export class OrderControllerBase {
 
         discount: true,
         id: true,
+        onumber: true,
 
         product: {
           select: {
@@ -214,6 +217,7 @@ export class OrderControllerBase {
 
           discount: true,
           id: true,
+          onumber: true,
 
           product: {
             select: {
@@ -262,6 +266,7 @@ export class OrderControllerBase {
 
           discount: true,
           id: true,
+          onumber: true,
 
           product: {
             select: {

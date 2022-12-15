@@ -4,6 +4,7 @@ import { ScoreWhereUniqueInput } from "../score/ScoreWhereUniqueInput";
 
 export type CustomerCreateInput = {
   address?: AddressWhereUniqueInput | null;
+  cnumber?: string | null;
   email?: string | null;
   firstName?: string | null;
   lastName?: string | null;

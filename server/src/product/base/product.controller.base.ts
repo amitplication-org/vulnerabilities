@@ -215,6 +215,7 @@ export class ProductControllerBase {
 
         discount: true,
         id: true,
+        onumber: true,
 
         product: {
           select: {

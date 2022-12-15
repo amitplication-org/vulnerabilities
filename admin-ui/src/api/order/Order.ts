@@ -6,6 +6,7 @@ export type Order = {
   customer?: Customer | null;
   discount: number | null;
   id: string;
+  onumber: string | null;
   product?: Product | null;
   quantity: number | null;
   totalPrice: number | null;

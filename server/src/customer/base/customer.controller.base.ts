@@ -71,6 +71,7 @@ export class CustomerControllerBase {
           },
         },
 
+        cnumber: true,
         createdAt: true,
         email: true,
         firstName: true,
@@ -111,6 +112,7 @@ export class CustomerControllerBase {
           },
         },
 
+        cnumber: true,
         createdAt: true,
         email: true,
         firstName: true,
@@ -152,6 +154,7 @@ export class CustomerControllerBase {
           },
         },
 
+        cnumber: true,
         createdAt: true,
         email: true,
         firstName: true,
@@ -216,6 +219,7 @@ export class CustomerControllerBase {
             },
           },
 
+          cnumber: true,
           createdAt: true,
           email: true,
           firstName: true,
@@ -265,6 +269,7 @@ export class CustomerControllerBase {
             },
           },
 
+          cnumber: true,
           createdAt: true,
           email: true,
           firstName: true,
@@ -318,6 +323,7 @@ export class CustomerControllerBase {
 
         discount: true,
         id: true,
+        onumber: true,
 
         product: {
           select: {

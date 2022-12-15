@@ -6,6 +6,7 @@ import { ScoreWhereUniqueInput } from "../score/ScoreWhereUniqueInput";
 
 export type CustomerWhereInput = {
   address?: AddressWhereUniqueInput;
+  cnumber?: StringNullableFilter;
   email?: StringNullableFilter;
   firstName?: StringNullableFilter;
   id?: IntFilter;

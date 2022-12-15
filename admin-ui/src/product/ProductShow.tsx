@@ -36,6 +36,7 @@ export const ProductShow = (props: ShowProps): React.ReactElement => {
             </ReferenceField>
             <TextField label="Discount" source="discount" />
             <TextField label="ID" source="id" />
+            <TextField label="onumber" source="onumber" />
             <ReferenceField
               label="Product"
               source="product.id"

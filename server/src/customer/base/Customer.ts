@@ -15,8 +15,8 @@ import { Address } from "../../address/base/Address";
 import {
   ValidateNested,
   IsOptional,
-  IsDate,
   IsString,
+  IsDate,
   IsInt,
 } from "class-validator";
 import { Type } from "class-transformer";
@@ -32,6 +32,17 @@ class Customer {
   @Type(() => Address)
   @IsOptional()
   address?: Address | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  cnumber!: string | null;
 
   @ApiProperty({
     required: true,
