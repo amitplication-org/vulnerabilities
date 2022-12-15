@@ -51,7 +51,8 @@ export class AddressServiceBase {
     parentId: string,
     args: Prisma.CustomerFindManyArgs
   ): Promise<Customer[]> {
-    return this.prisma.address.findUniqueOrThrow({
+    return this.prisma.address
+      .findUniqueOrThrow({
         where: { id: parentId },
       })
       .customers(args);
