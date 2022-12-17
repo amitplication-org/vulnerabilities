@@ -15,7 +15,7 @@ import { AddressWhereUniqueInput } from "../../address/base/AddressWhereUniqueIn
 import { ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
-import { StringFilter } from "../../util/StringFilter";
+import { IntFilter } from "../../util/IntFilter";
 import { OrderListRelationFilter } from "../../order/base/OrderListRelationFilter";
 import { ScoreWhereUniqueInput } from "../../score/base/ScoreWhereUniqueInput";
 @InputType()
@@ -67,14 +67,14 @@ class CustomerWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringFilter,
+    type: IntFilter,
   })
-  @Type(() => StringFilter)
+  @Type(() => IntFilter)
   @IsOptional()
-  @Field(() => StringFilter, {
+  @Field(() => IntFilter, {
     nullable: true,
   })
-  id?: StringFilter;
+  id?: IntFilter;
 
   @ApiProperty({
     required: false,
