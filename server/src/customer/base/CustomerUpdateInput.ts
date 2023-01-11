@@ -16,6 +16,7 @@ import { ValidateNested, IsOptional, IsString } from "class-validator";
 import { Type } from "class-transformer";
 import { OrderUpdateManyWithoutCustomersInput } from "./OrderUpdateManyWithoutCustomersInput";
 import { ScoreWhereUniqueInput } from "../../score/base/ScoreWhereUniqueInput";
+
 @InputType()
 class CustomerUpdateInput {
   @ApiProperty({
@@ -120,4 +121,5 @@ class CustomerUpdateInput {
   })
   test?: string | null;
 }
+
 export { CustomerUpdateInput };

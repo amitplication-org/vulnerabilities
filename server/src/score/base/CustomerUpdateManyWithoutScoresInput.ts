@@ -12,6 +12,7 @@ https://docs.amplication.com/how-to/custom-code
 import { InputType, Field } from "@nestjs/graphql";
 import { CustomerWhereUniqueInput } from "../../customer/base/CustomerWhereUniqueInput";
 import { ApiProperty } from "@nestjs/swagger";
+
 @InputType()
 class CustomerUpdateManyWithoutScoresInput {
   @Field(() => [CustomerWhereUniqueInput], {
@@ -41,4 +42,5 @@ class CustomerUpdateManyWithoutScoresInput {
   })
   set?: Array<CustomerWhereUniqueInput>;
 }
+
 export { CustomerUpdateManyWithoutScoresInput };
