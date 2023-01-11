@@ -20,6 +20,7 @@ import {
 } from "class-validator";
 import { Type } from "class-transformer";
 import { Customer } from "../../customer/base/Customer";
+
 @ObjectType()
 class Score {
   @ApiProperty({
@@ -66,4 +67,5 @@ class Score {
   })
   value!: number | null;
 }
+
 export { Score };

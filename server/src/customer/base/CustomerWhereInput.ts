@@ -18,6 +18,7 @@ import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { IntFilter } from "../../util/IntFilter";
 import { OrderListRelationFilter } from "../../order/base/OrderListRelationFilter";
 import { ScoreWhereUniqueInput } from "../../score/base/ScoreWhereUniqueInput";
+
 @InputType()
 class CustomerWhereInput {
   @ApiProperty({
@@ -133,4 +134,5 @@ class CustomerWhereInput {
   })
   test?: StringNullableFilter;
 }
+
 export { CustomerWhereInput };

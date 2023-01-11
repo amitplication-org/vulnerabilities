@@ -16,6 +16,7 @@ import { ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 import { StringFilter } from "../../util/StringFilter";
 import { FloatNullableFilter } from "../../util/FloatNullableFilter";
+
 @InputType()
 class ScoreWhereInput {
   @ApiProperty({
@@ -52,4 +53,5 @@ class ScoreWhereInput {
   })
   value?: FloatNullableFilter;
 }
+
 export { ScoreWhereInput };

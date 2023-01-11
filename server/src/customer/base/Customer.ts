@@ -22,6 +22,7 @@ import {
 import { Type } from "class-transformer";
 import { Order } from "../../order/base/Order";
 import { Score } from "../../score/base/Score";
+
 @ObjectType()
 class Customer {
   @ApiProperty({
@@ -141,4 +142,5 @@ class Customer {
   @Field(() => Date)
   updatedAt!: Date;
 }
+
 export { Customer };

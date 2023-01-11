@@ -14,6 +14,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import { CustomerCreateNestedManyWithoutScoresInput } from "./CustomerCreateNestedManyWithoutScoresInput";
 import { ValidateNested, IsOptional, IsNumber } from "class-validator";
 import { Type } from "class-transformer";
+
 @InputType()
 class ScoreCreateInput {
   @ApiProperty({
@@ -39,4 +40,5 @@ class ScoreCreateInput {
   })
   value?: number | null;
 }
+
 export { ScoreCreateInput };
